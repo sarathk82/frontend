@@ -24,7 +24,7 @@ function ProductScreen() {
 
         dispatch(listProductDetails(id));
 
-    }, []);
+    }, [dispatch, id]);
 
 
     return (
