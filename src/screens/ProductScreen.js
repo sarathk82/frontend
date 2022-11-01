@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
 import Rating from '../component/Rating';
-import Message from '../component/Message';
-import Loader from '../component/Loader';
-import products from '../products';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { listProductDetails } from '../actions/ProductActions';
 
 
 function ProductScreen() {
 
     const [product, setProduct] = useState([]);
-
-
     const { id } = useParams();
-    const product1 = products.find((p) => p._id === id);
-    console.log(product);
-    console.log(product1);
+
 
 
     useEffect(() => {
