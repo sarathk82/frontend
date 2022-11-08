@@ -11,21 +11,14 @@ import { listProductDetails } from '../actions/ProductActions';
 
 function ProductScreen() {
 
-    const dispatch = useDispatch();
-    const productDetails = useSelector(state => state.productDetails);
-    const { loading, error, product } = productDetails;
-    const { id } = useParams();
-    const product1 = products.find((p) => p._id === id);
-    console.log(product);
-    console.log(product1);
+    async function fetchProduct() {
+        const { data } = await axios.get(`/api/products/${id}`);
+        setProduct(data);
+    }
 
+    fetchProduct();
 
-    useEffect(() => {
-
-        dispatch(listProductDetails(id));
-
-    }, [dispatch, id]);
-
+    []);
 
     return (
         <div>
