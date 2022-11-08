@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
 import Rating from '../component/Rating';
-import Message from '../component/Message';
-import Loader from '../component/Loader';
-import { useSelector, useDispatch } from 'react-redux';
-import { listProductDetails } from '../actions/ProductActions';
+import axios from 'axios';
 
 
 function ProductScreen() {
@@ -13,17 +10,18 @@ function ProductScreen() {
     const [product, setProduct] = useState([]);
     const { id } = useParams();
 
+
+
     useEffect(() => {
 
         async function fetchProduct() {
-            const { data } = await axios.get(`http://127.0.0.1:8000/api/products/${id}`);
+            const { data } = await axios.get(`/api/products/${id}`);
             setProduct(data);
         }
 
         fetchProduct();
 
-    }, [dispatch, id]);
-
+    }, []);
 
     return (
         <div>
@@ -97,5 +95,4 @@ function ProductScreen() {
         </div>
     );
 }
-
 export default ProductScreen;
