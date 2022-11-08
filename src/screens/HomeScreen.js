@@ -17,7 +17,7 @@ function HomeScreen() {
 
         dispatch(listProducts());
 
-    }, []);
+    });
 
 
     return (
