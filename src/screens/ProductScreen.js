@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
 import Rating from '../component/Rating';
-import axios from 'axios';
+import Message from '../component/Message';
+import Loader from '../component/Loader';
+import { useSelector, useDispatch } from 'react-redux';
+import { listProductDetails } from '../actions/ProductActions';
 
 
 function ProductScreen() {
 
     const [product, setProduct] = useState([]);
     const { id } = useParams();
-
-
 
     useEffect(() => {
 
