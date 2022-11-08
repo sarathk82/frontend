@@ -10,6 +10,12 @@ import { listProductDetails } from '../actions/ProductActions';
 
 function ProductScreen() {
 
+    async function fetchProduct() {
+        const { data } = await axios.get(`/api/products/${id}`);
+        setProduct(data);
+    }
+
+    fetchProduct();
     const [product, setProduct] = useState([]);
     const { id } = useParams();
 
