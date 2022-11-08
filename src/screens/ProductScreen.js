@@ -21,7 +21,7 @@ function ProductScreen() {
 
         fetchProduct();
 
-    }, []);
+    });
 
 
     return (
