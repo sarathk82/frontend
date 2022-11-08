@@ -9,8 +9,6 @@ import {
     PRODUCT_DETAILS_FAIL
 } from '../constants/ProductConstants';
 
-import { useParams } from 'react-router-dom';
-
 import axios from 'axios';
 
 
