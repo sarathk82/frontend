@@ -17,7 +17,9 @@ function HomeScreen() {
 
         fetchProducts();
 
-    }, []);
+    });
+
+
     return (
         <div>
             <h1>
